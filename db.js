@@ -17,14 +17,15 @@ const firebaseConfig = {
     //Esta información corresponde a mi cuenta de firebase
     //Cada proyecto tiene su propia configuración única
     //Reemplazá los valores por los de tu propio proyecto de Firebase si estás siguiendo este ejemplo
-    apiKey: "INGRESA TU API KEY",
-    authDomain: "INGRESA TU AUTH DOMAIN",
-    databaseURL: "INGRESA TU DATABASE URL",
-    projectId: "INGRESA TU PROJECT ID",
-    storageBucket: "INGRESA TU STORAGE BUCKET",
-    messagingSenderId: "INGRESA TU MESSAGING SENDER ID",
-    appId: "INGRESA TU APP ID"
-};
+    apiKey: "AIzaSyBVo17Y-5IFsmyRfoV0fcjZOGj783T48CU",
+    authDomain: "base-de-datos-robotica.firebaseapp.com",
+    databaseURL: "https://base-de-datos-robotica-default-rtdb.firebaseio.com",
+    projectId: "base-de-datos-robotica",
+    storageBucket: "base-de-datos-robotica.firebasestorage.app",
+    messagingSenderId: "798435636157",
+    appId: "1:798435636157:web:491c422241c7e76e5158d4",
+    measurementId: "G-L8PM7N6WX3"
+  };
 
 // Inicializamos la app de firebase
 const app = initializeApp(firebaseConfig);
@@ -47,18 +48,18 @@ btnAgregar.onclick = function () {
     //Creamos una referencia a la ubicación "estudiantes" en la base de datos
     //Y con el dni como clave unica
     //Esto asegura que cada estudiante se almacene bajo su dni
-    let estudiantesRef = ref(db, 'estudiantes/' + inputDni.value);
+    let HuertaRef = ref(db, 'Huerta');
 
     //Usamos la función "set" para escribir los datos del nuevo estudiante en la base de datos
     //Le indicamos donde almacenar los datos y qué datos almacenar
 
 
-    set(estudiantesRef, {
+    set(HuertaRef, {
         //Tomamos cada dato desde los inputs del formulario
-        nombre: inputNombre.value,
-        apellido: inputApellido.value,
-        edad: inputEdad.value,
-        nota: inputNota.value
+       TempSuelo: inputNombre.value,
+       TempAire: inputApellido.value,
+       HumedadSuelo: inputEdad.value,
+      HumedadAire : inputNota.value
     })
 
 
